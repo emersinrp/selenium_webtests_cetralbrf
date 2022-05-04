@@ -34,9 +34,7 @@ public class TestLoginPage {
     
     @Before
     public void openSetupBrowser() {
-        //System.setProperty("webdriver.chrome.driver", "/opt/homebrew/bin/chromedriver");
-
-        //options.addArguments("--headless");
+        options.addArguments("--headless");
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(options);
         loginPage = new LoginPage(driver);

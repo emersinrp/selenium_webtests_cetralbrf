@@ -20,12 +20,12 @@ public class TestRegisterPage {
     LoginPage loginPage;
     RegisterPage registerPage;
     ChromeOptions options = new ChromeOptions();
-    String urlBrfUatRegister = "https://brfsbuat-brf.cs215.force.com/portalbrf/cadastro";
+    String urlBrfUatRegister = "https://brfsbuast-brf.cs215.force.com/portalbrf/cadastro";
     String msgRegisterSuccess = "//*[@id='swal2-title'][contains(text(),'Cadastro OK!')]";
 
     @Before
     public void openSetupBrowser() {
-        System.setProperty("webdriver.chrome.driver", "/opt/homebrew/bin/chromedriver");
+        //System.setProperty("webdriver.chrome.driver", "/opt/homebrew/bin/chromedriver");
         driver = new ChromeDriver(options);
         loginPage = new LoginPage(driver);
         registerPage = new RegisterPage(driver);

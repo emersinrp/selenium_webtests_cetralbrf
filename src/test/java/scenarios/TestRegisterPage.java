@@ -1,5 +1,6 @@
 package scenarios;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -26,6 +27,7 @@ public class TestRegisterPage {
     @Before
     public void openSetupBrowser() {
         //System.setProperty("webdriver.chrome.driver", "/opt/homebrew/bin/chromedriver");
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(options);
         loginPage = new LoginPage(driver);
         registerPage = new RegisterPage(driver);

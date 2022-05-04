@@ -3,6 +3,7 @@ package scenarios;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -36,6 +37,7 @@ public class TestLoginPage {
         //System.setProperty("webdriver.chrome.driver", "/opt/homebrew/bin/chromedriver");
 
         //options.addArguments("--headless");
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(options);
         loginPage = new LoginPage(driver);
         driver.manage().window().maximize();

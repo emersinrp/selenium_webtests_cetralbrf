@@ -1,5 +1,6 @@
 package scenarios;
 
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -28,13 +29,12 @@ public class TestRegisterPage {
         loginPage = new LoginPage(driver);
         registerPage = new RegisterPage(driver);
         //driver.manage().window().maximize();
-        driver.manage().window().setSize(new Dimension(1920, 980));
+        //driver.manage().window().setSize(new Dimension(1920, 980));
         driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().timeouts().setScriptTimeout(100,TimeUnit.SECONDS);
         driver.get(urlBrfUatRegister);
     }
-
     @Test
     public void testRegisterSuccess() {
         registerPage.aguardaBotaoQueroSerCliente();
@@ -53,10 +53,13 @@ public class TestRegisterPage {
         validarMsgEsperada("Cadastro OK!", msgRegisterSuccess);
         registerPage.clickButtonCadastroOk();
     }
-
     public void validarMsgEsperada(String msgEsperada, String msgExibida) {
         Assert.assertEquals(msgEsperada, driver.findElement(By.xpath(msgExibida)).getText());
     }
+    @After
+    public void closeBrowser() {
 
+        driver.quit();
+    }
 
 }

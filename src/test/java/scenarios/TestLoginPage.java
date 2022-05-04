@@ -36,13 +36,12 @@ public class TestLoginPage {
         driver = new ChromeDriver(options);
         loginPage = new LoginPage(driver);
         //driver.manage().window().maximize();
-        driver.manage().window().setSize(new Dimension(1920, 980));
+        //driver.manage().window().setSize(new Dimension(1920, 980));
         driver.manage().timeouts().pageLoadTimeout(100, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().timeouts().setScriptTimeout(100,TimeUnit.SECONDS);
         driver.get(urlBrfUat);
     }
-
     @Test
     public void testLoginSucesso() throws IOException {
         loginPage.aguardaBotaoEntrar();
@@ -120,6 +119,7 @@ public class TestLoginPage {
 
     @After
     public void closeBrowser() {
+
         driver.quit();
     }
 }

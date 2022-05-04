@@ -22,8 +22,9 @@ public class LoginPage {
     String BOTAOCADASTROCONTA = "//small[1]/div/ul/li/form/section[2]/a[2]";
 
 
-    public LoginPage(WebDriver driverVindoDoTeste) { //metodo contrutor
-        this.driver = driverVindoDoTeste;
+    public LoginPage(WebDriver driver) { //metodo construtor
+
+        this.driver = driver;
     }
 
     public void takeScreenshot(String nameScreenshot) throws IOException {
@@ -47,22 +48,27 @@ public class LoginPage {
     }
 
     public void preencherEmail(String email) {
+
         driver.findElement(By.xpath(PREENCHEREMAIL)).sendKeys(email);
     }
 
     public void preencherSenha(String senha) {
+
         driver.findElement(By.xpath(PREENCHERSENHA)).sendKeys(senha);
     }
 
     public void clicaBotaoEntrar() {
+
         driver.findElement(By.xpath(BOTAOENTRAR)).click();
     }
 
     public void clicaEsqueciMinhaSenha() {
+
         driver.findElement((By.xpath(ESQUECIMINHASENHA))).click();
     }
 
     public void clicaBotaoCadastroConta() {
+
         driver.findElement(By.xpath(BOTAOCADASTROCONTA)).click();
     }
 

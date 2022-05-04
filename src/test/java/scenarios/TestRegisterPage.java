@@ -26,7 +26,7 @@ public class TestRegisterPage {
 
     @Before
     public void openSetupBrowser() {
-        //options.addArguments("--headless");
+        options.addArguments("--headless");
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(options);
         loginPage = new LoginPage(driver);

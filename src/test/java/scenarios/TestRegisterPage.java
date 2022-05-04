@@ -25,11 +25,12 @@ public class TestRegisterPage {
 
     @Before
     public void openSetupBrowser() {
+        System.setProperty("webdriver.chrome.driver", "/opt/homebrew/bin/chromedriver");
         driver = new ChromeDriver(options);
         loginPage = new LoginPage(driver);
         registerPage = new RegisterPage(driver);
-        //driver.manage().window().maximize();
-        //driver.manage().window().setSize(new Dimension(1920, 980));
+        driver.manage().window().maximize();
+        driver.manage().window().setSize(new Dimension(1920, 980));
         driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().timeouts().setScriptTimeout(100,TimeUnit.SECONDS);

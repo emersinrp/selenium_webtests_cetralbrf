@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        maven 'MAVEN_HOME'
-    }
-
     stages {
         stage('Build') {
             steps {
@@ -12,7 +8,7 @@ pipeline {
 
                 // Run Maven on a Unix agent.
                 sh 'echo Execução de testes:'
-                sh 'mvn clean install test'
+                mvn 'clean install test'
 
                 // To run Maven on a Windows agent, use
                 // bat "mvn -Dmaven.test.failure.ignore=true clean package"

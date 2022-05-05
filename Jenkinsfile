@@ -7,8 +7,8 @@ pipeline {
                 // Get some code from a GitHub repository
 
                 // Run Maven on a Unix agent.
-                sh 'echo Execução de testes:'
-                mvn 'clean install test'
+                sh 'echo Execucao de testes:'
+                sh './mvnw clean install test'
 
                 // To run Maven on a Windows agent, use
                 // bat "mvn -Dmaven.test.failure.ignore=true clean package"

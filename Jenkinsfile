@@ -1,17 +1,17 @@
 pipeline {
     agent any
-
+    environment {
+        PATH = "/opt/homebrew/Cellar/maven/3.8.3/bin:$PATH"
+    }
     stages {
         stage('Build') {
             steps {
                 // Get some code from a GitHub repository
-
+                sh 'echo Clone repositorio Git:'
                 // Run Maven on a Unix agent.
                 sh 'echo Execucao de testes:'
-                mvn clean install test
+                sh 'mvn clean install test'
 
-                // To run Maven on a Windows agent, use
-                // bat "mvn -Dmaven.test.failure.ignore=true clean package"
             }
 
             post {

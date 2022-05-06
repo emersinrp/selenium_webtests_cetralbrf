@@ -9,6 +9,7 @@ pipeline {
                 // Get some code from a GitHub repository
                 sh 'echo Clone repositorio Git:'
             }
+        }
         stage('Execucao dos Testes') {
             steps {
                 // Run Maven on a Unix agent.
@@ -16,7 +17,7 @@ pipeline {
                 sh 'mvn clean install test'
             }
         }
-            }
+    }
             post {
                 // If Maven was able to run the tests, even if some of the test
                 // failed, record the test results and archive the jar file.

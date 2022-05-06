@@ -8,6 +8,7 @@ pipeline {
             steps {
                 // Get some code from a GitHub repository
                 sh 'echo Clone repositorio Git:'
+                git 'https://github.com/emersinrp/selenium_webtests_cetralbrf.git'
             }
         }
         stage('Execucao dos Testes') {

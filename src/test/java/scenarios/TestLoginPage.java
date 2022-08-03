@@ -123,6 +123,6 @@ public class TestLoginPage {
     @After
     public void closeBrowser() {
 
-        driver.quit();
+        driver.quit(); //browser fechando
     }
 }
